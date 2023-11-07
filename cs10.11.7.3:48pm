@@ -1,0 +1,23 @@
+#include <iostream>
+int main() 
+{
+ const int A = 5;
+ const int B = 5;
+ int P[A][B] = {0};
+   for (int r = 0; r < A; ++r)
+    for (int c = 0; c < B; ++c)
+      P[r][c]=r*c;
+ std::cout << "using for loop: \n";
+ for (int r = 1; r < A; ++r)
+ {
+   for (int c = 1; c < B; ++c)
+   {
+     std::cout << P[r][c] << "\t";}
+     std::cout << std::endl;
+  }
+/*using for loop: 
+1	2	3	4	
+2	4	6	8	
+3	6	9	12	
+4	8	12	16	
+ */
