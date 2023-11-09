@@ -1,0 +1,3 @@
+#include <fstream>
+ifstream in;    // in is a stream that will stream data from a file
+ofstream out;   // out is a stream that will stream data to a file
