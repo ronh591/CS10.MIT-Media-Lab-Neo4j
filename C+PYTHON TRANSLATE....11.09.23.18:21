@@ -1,0 +1,37 @@
+import io
+import os
+
+
+def check_file_stream(filename):
+  """Checks if the file stream for the given filename is connected.
+
+  Args:
+    filename: The filename to check.
+
+  Returns:
+    True if the file stream is connected, False otherwise.
+  """
+
+  try:
+    with open(filename, "r") as f:
+      return True
+  except FileNotFoundError:
+    return False
+
+
+if __name__ == "__main__":
+  # Get the filename from the user.
+  filename = input("Enter the filename: ")
+
+  # Check if the file stream is connected.
+  if check_file_stream(filename):
+    # The file stream is connected.
+    print("The file stream is connected.")
+
+    # Read the numbers from the file and print them to the screen.
+    with open(filename, "r") as f:
+      for line in f:
+        print(line)
+  else:
+    # The file stream is not connected.
+    print("The file stream is not connected.")
