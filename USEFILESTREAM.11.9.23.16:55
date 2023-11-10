@@ -1,0 +1,59 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+  // Create a C-string variable to store the name of the file.
+  char filename[] = "input.dat";
+
+  // Create a stream object to read from the file.
+  ifstream in(filename);
+
+  // Check if the file stream is connected.
+  if (in.is_open()) {
+    // The file stream is connected.
+    cout << "The file stream is connected." << endl;
+
+    // Read the numbers from the file and print them to the screen.
+    int number;
+    while (in >> number) {
+      cout << number << " ";
+    }
+
+    // Close the stream object.
+    in.close();
+  } else {
+    // The file stream is not connected.
+    cout << "The file stream is not connected." << endl;
+  }
+
+  return 0;
+}//The file stream is not connected.
+ //OK
+ /*int num;
+in>>num; // reads in the 5
+in>>num; // reads in the 9
+in>>num; // reads in the 44
+in>>num; // reads in the 2
+in>>num; // reads in the -1
+         // etc.*/
+//in.close();
+/*Of course, your data might not be just numbers. Suppose the data is something like last name, comma, first name, space, height in inches.
+
+Price, Clayton 70
+Schmoe, Joe 80
+How do you read that data? Well, think types. I would read it this way:
+
+string lastname, firstname;
+short ht;
+in>>lastname;   // this will pick up the comma
+in>>firstname;  // reads until space
+in>>ht;         // reads the number and pointer goes to next last name.
+Of course, if you expect any names to contain spaces (e.g. La Verne), then you had better use a getline:
+
+getline(in,lastname,’,’);
+getline(in,firstname,’\n’); // now firstname will include height and you will need
+                            // to extract that information using char manip fncts*/
+                            //The file stream is not connected.
+ 
