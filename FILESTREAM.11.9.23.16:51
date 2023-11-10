@@ -1,0 +1,20 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+  // Create a stream object to read from the file "input.dat".
+  ifstream in("input.dat");
+
+  // Read the numbers from the file and print them to the screen.
+  int number;
+  while (in >> number) {
+    cout << number << " ";
+  }
+
+  // Close the stream object.
+  in.close();
+
+  return 0;
+//Normal program termination. Exit status: 0
