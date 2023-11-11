@@ -1,0 +1,7 @@
+std::ofstream myfile("example.txt");
+
+// Write some data to the file
+myfile << "This is some data." << std::endl;
+
+// Flush the buffer and synchronize the stream
+myfile.flush();
