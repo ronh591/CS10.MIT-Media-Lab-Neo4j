@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+void process_data(int var) {
+  cout << var << endl;
+}
+
+int main() {
+  int var;
+  while (cin >> var) {
+    cin >> var; // skip every other variable
+    process_data(var);
+  }
+
+  return 0;
+}
