@@ -1,0 +1,9 @@
+// Seek to the beginning of the stream
+myfile.seekg(std::streamoff(0));
+
+// Calculate the length of the stream
+std::streamoff length = myfile.tellg();
+
+// Read 10 bytes from the stream
+char buffer[10];
+myfile.read(buffer, std::streamoff(10));
