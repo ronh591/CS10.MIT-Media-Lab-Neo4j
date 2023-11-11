@@ -1,0 +1,32 @@
+import sys
+
+
+def read_file_line_by_line(filename):
+  """Reads a file line by line and returns a list of lines.
+
+  Args:
+    filename: The name of the file to read.
+
+  Returns:
+    A list of strings, each line of the file.
+  """
+
+  lines = []
+  with open(filename, "r") as f:
+    for line in f:
+      lines.append(line)
+  return lines
+
+
+def main():
+  filename = input("Enter the name of the file to read: ")
+
+  lines = read_file_line_by_line(filename)
+
+  for line in lines:
+    # do work on each line of the file here
+    print(line)
+
+
+if __name__ == "__main__":
+  main()
