@@ -1,0 +1,56 @@
+#include <string>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+
+
+void reverseme(string v[], int &numused)
+{
+  ofstream myfile;
+   myfile.open("reverse.txt");
+  if (myfile.is_open())
+ {
+     for (int i = numused-1; i>=0; --i) // write "backwards"
+         myfile << v[i]<< endl; 
+ }
+  else 
+   cout << "Unable to open output file"<< endl;
+
+}
+
+void tovector(string inputfilename, string v[], int &numused)
+{
+  string line;
+  
+  ifstream in(inputfilename);
+
+  while(getline(in, line))
+  {
+    if (in.fail()) 
+       cout << "Unable to open input file" << endl;
+    else
+       v[numused++] = line;
+  }
+
+}
+
+  string inputfilename()
+{
+   string s;
+
+   cout << "Enter filename: ";
+   getline(cin, s);
+   return s;
+   
+}
+
+int main() 
+{
+   string filename = inputfilename();
+   string v[1000];
+   int numused = 0;
+   tovector(filename, v, numused);
+   reverseme(v, numused);
+
+}
