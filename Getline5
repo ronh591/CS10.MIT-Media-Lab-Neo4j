@@ -1,0 +1,25 @@
+#include <fstream>
+#include <string>
+using namespace std;
+
+void myLines();
+int main()
+{
+   myLines();
+}
+
+void myLines()
+{
+  string line;
+  string myarray[10];
+  int numused=0;
+  ifstream myfile ("example.txt");
+  if (myfile.is_open())
+  {
+    while (getline(myfile, line))
+     {
+      myarray[numused++] = line; 
+     }
+    myfile.close();
+  }
+}
